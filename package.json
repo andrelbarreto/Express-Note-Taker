@@ -1,15 +1,16 @@
 {
-  "name": "note-taker",
+  "name": "express-note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Allows user to save notes, created using Express",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Andre Barreto",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "path": "^0.12.7"
   }
 }
