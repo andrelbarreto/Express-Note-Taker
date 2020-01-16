@@ -1,12 +1,15 @@
 // Dependencies
 // =============================================================
 var express = require("express");
+const routes = require("./routes");
 var path = require("path");
 
-// Sets up the Express App
+// Sets up the Express Server App
 // =============================================================
 var app = express();
-var PORT = process.env.port || 8080;
+app.use(express.static('public'));
+// sets port for herouku or local 8080
+const PORT = process.env.port || 8080;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -16,14 +19,16 @@ app.use(express.json());
 require("./notes/notesRoutes")(app);
 
 
+// sets up api routes files
+app.use(routes);
+
+
 // // Note Element
 // // =============================================================
-// var Table = [
+// var note = [
 //   {
-//     customerName: "Yoda",
-//     phoneNumber: "7736079056",
-//     customerEmail: "Yoda@gmail.com",
-//     customerID: "FXZ01",
+//     NoteTitle: "Yoda",
+//     NoteBody: "The Best Jedi",
 //   }, 
 // ]
 
