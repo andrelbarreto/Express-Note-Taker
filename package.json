@@ -1,8 +1,8 @@
 {
   "name": "express-note-taker",
   "version": "1.0.0",
-  "description": "Allows user to save notes, created using Express",
-  "main": "index.js",
+  "description": "Allows user to save and delete notes, created using Express",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
