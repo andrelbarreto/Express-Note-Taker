@@ -6,10 +6,26 @@ var path = require("path");
 
 // Sets up the Express Server App
 // =============================================================
-var app = express();
-app.use(express.static('public'));
+
+
 // sets port for herouku or local 8080
 const PORT = process.env.port || 8080;
+//Create var to require express package 
+
+
+//Create express server
+var app = express();
+
+//Setting up Port
+var PORT = process.env.PORT || 8080;
+
+//Creating express app
+app.use(express.static('public'));
+
+//Linking html and api routes
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
+
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -21,16 +37,6 @@ require("./notes/notesRoutes")(app);
 
 // sets up api routes files
 app.use(routes);
-
-
-// // Note Element
-// // =============================================================
-// var note = [
-//   {
-//     NoteTitle: "Yoda",
-//     NoteBody: "The Best Jedi",
-//   }, 
-// ]
 
 
 // Starts the server to begin listening
