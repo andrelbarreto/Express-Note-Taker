@@ -16,8 +16,6 @@ const PORT = process.env.port || 8080;
 //Create express server
 var app = express();
 
-//Setting up Port
-var PORT = process.env.PORT || 8080;
 
 //Creating express app
 app.use(express.static('public'));
