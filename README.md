@@ -5,9 +5,9 @@
 <br>
 Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
 
-![Screenshot]("%5CDevelop%5Cpublic%5Cassets%5CExpressNoteTaker.png")
+![Screenshot](..\public\assets\CExpressNoteTaker.png")
 
-![Screenshot](..\Develop\public\assets\ExpressNoteTakerSaving.png)
+![Screenshot](..\public\assets\ExpressNoteTakerSaving.png)
 
 The application frontend has already been created, it's your job to build the backend and connect the two.
 <br>
