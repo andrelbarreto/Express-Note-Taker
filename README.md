@@ -50,15 +50,15 @@ Business Context :
 <br>For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
 <br>
 Acceptance Criteria :
-<br>Application should allow users to create and save notes.
-<br>Application should allow users to view previously saved notes.
-<br>Application should allow users to delete previously saved notes.
+<p>Application should allow users to create and save notes.
+<p>Application should allow users to view previously saved notes.
+<p>Application should allow users to delete previously saved notes.
 
-<br>
+<p>
 
-Submission on BCS
+<br>Submission on BCS
 
-<br>The URL of the deployed application
+<p>The URL of the deployed application
 
 
-<br>The URL of the GitHub repository
+<p>The URL of the GitHub repository
