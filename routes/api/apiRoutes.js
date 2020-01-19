@@ -19,7 +19,7 @@ app.post("/api/notes", function(req,res) {
   notesArray.push(newNote);
   savedatabase(notesArray);
   });
-  console.log(newNote);
+  
 
 
 
@@ -35,11 +35,11 @@ app.delete ("/api/notes/:id", function (req, res) {
 /* this returns a copy of database that can be modified */
 /* loads the .json file and returns a copied array[] */
 function getDatabase() {
-  const json = fs.readFileSync(path.join(__dirname, "../db/db.json"));
+  const json = fs.readFileSync(path.join(__dirname, "../../db/db.json"));
   return JSON.parse(json);
 }
 
 /* this will write over the .json file with whatever you pass to this function */
 function saveDatabase(newData) {
-  return fs.writeFileSync(path.join(__dirname, "../db/db.json"), JSON.stringify(newData))
+  return fs.writeFileSync(path.join(__dirname, "../../db/db.json"), JSON.stringify(newData))
 }

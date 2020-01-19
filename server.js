@@ -3,6 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
+var PORT = process.env.PORT || 3006;
 
 //Create const to require express package 
 const express = require('express');
