@@ -1,3 +1,12 @@
+var $noteTitle = $(".note-title");
+var $noteText = $(".note-textarea");
+var $saveNoteBtn = $(".save-note");
+var $newNoteBtn = $(".new-note");
+var $noteList = $(".list-container .list-group");
+
+// activeNote is used to keep track of the note in the textarea
+var activeNote = {};
+
 $( document ).ready(function() {
 let notes;
 
@@ -22,8 +31,8 @@ $("#save-note").on("click", function() {
   event.preventDefault();
   
   const noteData = {
-      title: $("#title-input").val().trim(),
-      body: $("#text-input").val().trim()
+      title: $("#note-title").val().trim(),
+      body: $("#note-text").val().trim()
       
     };
     console.log(noteData);
@@ -38,9 +47,8 @@ $("#save-note").on("click", function() {
 
 
 function deleteListener(){
-  // alert("starting");
+ 
   $(".delete-button").click(function() {
-    // event.preventDefault();
     let deleteData = {
       id: $(this).attr("data-id").trim(),
       body: $(this).attr("data-body").trim(),
@@ -57,7 +65,4 @@ function deleteListener(){
 
   });
 };
-
-// setTimeout(function(){deleteListener(); console.log("ready");}, 1000);
-// $(this).attr("data-name")
-
+}

@@ -1,41 +1,45 @@
 // Dependencies
 // =============================================================
-var express = require("express");
-const routes = require("./routes");
-var path = require("path");
 
-// Sets up the Express Server App
-// =============================================================
+const fs = require('fs');
+const path = require('path');
 
-
-// sets port for herouku or local 8080
-const PORT = process.env.port || 8080;
-//Create var to require express package 
-
+//Create const to require express package 
+const express = require('express');
 
 //Create express server
-var app = express();
+const app = express();
 
 
 //Creating express app
 app.use(express.static('public'));
 
+
 //Linking html and api routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/api/apiRoutes")(app);
+require("./routes/html/htmlRoutes")(app);
 
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//requires use of routes for the app
-require("./notes/notesRoutes")(app);
 
 
 // sets up api routes files
-app.use(routes);
+// app.use(routes);
 
+
+// app.get("/notes", (request, response) => {
+//   response.sendFile(path.join(__dirname, "..", "notes.html"));
+//   console.log("Your Notes!");
+
+// })
+// app.get("*", (request, response) => {
+//   response.sendFile(path.join(__dirname, "..", "index.html"));
+//   console.log("Your Index!");
+
+// })
 
 // Starts the server to begin listening
 // =============================================================
