@@ -1,5 +1,6 @@
 //const router = require("express").Router();
 const express = require("express");
+// set the routes to require path
 const path = require("path");
 
 // index html at /
@@ -12,21 +13,10 @@ app.get("/", function(req, res) {
 app.get("/notes", function(req, res) {
   res.json(path.join(__dirname, "../../public/notes.html"));
 });
+
+// Reroutes to index page if anything other than notes or index are inputed
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
 }
 
-// router
-//   .route("/")
-//   .get(function(req, res){
-//   res.sendFile(path.join(__dirname, "../../public/index.html"));
-// });
-
-// // notes.html at /notes
-
-// router
-//   .route("/notes")
-//   .get(function(req, res){
-//   res.sendFile(path.join(__dirname, "../../public/notes.html"));
-// });
-
-
-// module.exports = router;
