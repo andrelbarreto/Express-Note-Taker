@@ -1,4 +1,7 @@
-const router = require("express").Router;
+//const router = require("express").Router;
+
+//requirements for the code to run include express, fs and path
+var express = require("express");
 var fs = require("fs");
 var path = require("path");
 let notesArray = getDatabase();
@@ -8,7 +11,7 @@ let notesArray = getDatabase();
 module.exports = function(app) {
 app.get("/api/notes", function(req, res) {
   
-    res.json(getdatabase());
+    res.json(getDatabase());
 
 });
 
@@ -17,13 +20,13 @@ app.post("/api/notes", function(req,res) {
   const newNote = req.body;
   newNote.id = Math.floor(Math.random() * 10000);
   notesArray.push(newNote);
-  savedatabase(notesArray);
+  saveDatabase(notesArray);
   });
   
 
 
 
-// delete a post based on parameters passed
+// delete a note based on parameters passed
 app.delete ("/api/notes/:id", function (req, res) {
   notesArray = notesArray.filter (note => note.id != req.params.id)
   res.json(notesArray);
